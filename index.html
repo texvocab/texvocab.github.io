@@ -145,37 +145,25 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              Whole-body mesh recovery aims to estimate the 3D human body, face, and hands parameters from a single
-              image.
-              It is challenging to perform this task with a single network due to resolution issues, i.e., the face and
-              hands are usually located in extremely small regions.
+              To adequately utilize the available image evidence in multi-view video-based avatar modeling, we propose TexVocab,
+              a novel avatar representation that constructs a texture vocabulary and associates body poses with texture maps for animation. 
             </p>
             <p>
-              Existing works usually detect hands and faces, enlarge their resolution to feed in a specific network to
-              predict the parameter,
-              and finally fuse the results. While this copy-paste pipeline can capture the fine-grained details of the
-              face and hands,
-              the connections between different parts cannot be easily recovered in late fusion, leading to implausible
-              3D
-              rotation and unnatural pose.
+              Given multi-view RGB videos, our method initially back-projects all the available images in
+              the training videos to the posed SMPL surface, producing texture maps in the SMPL UV domain. 
+              Then we construct pairs of human poses and texture maps to establish a texture vocabulary for
+              encoding dynamic human appearances under various poses. Unlike the commonly used joint-wise manner, 
+              we further design a body-part-wise encoding strategy to learn the structural effects of the kinematic chain.
+             </p>
+            <p>
+              Given a driving pose, we query the pose feature hierarchically by decomposing the pose vector 
+              into several body parts and interpolating the texture features for synthesizing fine-grained human dynamics.
             </p>
             <p>
-              In this work, we propose a one-stage pipeline for expressive whole-body mesh recovery, named OSX, without
-              separate networks for each part.
-              Specifically, we design a Component Aware Transformer (CAT) composed of a global body encoder and a local
-              face/hand decoder.
-              The encoder predicts the body parameters and provides a high-quality feature map for the decoder,
-              which performs a feature-level upsample-crop scheme to extract high-resolution part-specific features and
-              adopt keypoint-guided deformable attention to estimate hand and face precisely.
-              The whole pipeline is simple yet effective without any manual post-processing and
-              naturally avoids implausible prediction. Comprehensive experiments demonstrate the effectiveness of OSX.
+              Overall, our method is able to create animatable human avatars with detailed and dynamic appearances from RGB 
+              videos, and the experiments show that our method outperforms state-of-the-art approaches.
             </p>
-            <p>
-              Lastly, we build a large-scale Upper-Body dataset (UBody) with high-quality 2D and 3D whole-body
-              annotations.
-              It contains persons with partially visible bodies in diverse real-life scenarios to bridge the gap between
-              the basic task and downstream applications.
-            </p>
+           
           </div>
         </div>
       </div>
