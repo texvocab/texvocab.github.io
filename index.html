@@ -264,25 +264,11 @@ animatable human avatars.
           AGORA dataset. From left to right: 1. Input, 2. ExPose, 3. Hand4Whoe, 4. OSX (Ours)
         </h2>
  <div class="content has-text-justified">
-            <p>
-              To adequately utilize the available image evidence in multi-view video-based avatar modeling, we propose TexVocab,
-              a novel avatar representation that constructs a texture vocabulary and associates body poses with texture maps for animation. 
-            </p>
-            <p>
-              Given multi-view RGB videos, our method initially back-projects all the available images in
-              the training videos to the posed SMPL surface, producing texture maps in the SMPL UV domain. 
-              Then we construct pairs of human poses and texture maps to establish a texture vocabulary for
-              encoding dynamic human appearances under various poses. Unlike the commonly used joint-wise manner, 
-              we further design a body-part-wise encoding strategy to learn the structural effects of the kinematic chain.
-             </p>
-            <p>
-              Given a driving pose, we query the pose feature hierarchically by decomposing the pose vector 
-              into several body parts and interpolating the texture features for synthesizing fine-grained human dynamics.
-            </p>
-            <p>
-              Overall, our method is able to create animatable human avatars with detailed and dynamic appearances from RGB 
-              videos, and the experiments show that our method outperforms state-of-the-art approaches.
-            </p>
+            We first construct TexVocab by decomposing SMPL poses into body parts, sampling key body parts 
+   and gathering corresponding texture maps. 
+   Then given a query pose and a 3D coordinate, we decompose the pose into body parts, interpolate key body parts
+   and sample texture maps as the pose conditioned feature. We finally utilize NeRF represented as an MLP to
+   decode the dynamic character and render human appearance with detailed pose-dependent dynamics.
            
           </div>
         
