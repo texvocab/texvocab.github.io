@@ -177,28 +177,6 @@ animatable human avatars.
       <div class="container">
         <h3 class="title is-3">Method</h3>
         <div id="results-carousel" class="carousel results-carousel">
-          <div class="content has-text-justified">
-            <p>
-              To adequately utilize the available image evidence in multi-view video-based avatar modeling, we propose TexVocab,
-              a novel avatar representation that constructs a texture vocabulary and associates body poses with texture maps for animation. 
-            </p>
-            <p>
-              Given multi-view RGB videos, our method initially back-projects all the available images in
-              the training videos to the posed SMPL surface, producing texture maps in the SMPL UV domain. 
-              Then we construct pairs of human poses and texture maps to establish a texture vocabulary for
-              encoding dynamic human appearances under various poses. Unlike the commonly used joint-wise manner, 
-              we further design a body-part-wise encoding strategy to learn the structural effects of the kinematic chain.
-             </p>
-            <p>
-              Given a driving pose, we query the pose feature hierarchically by decomposing the pose vector 
-              into several body parts and interpolating the texture features for synthesizing fine-grained human dynamics.
-            </p>
-            <p>
-              Overall, our method is able to create animatable human avatars with detailed and dynamic appearances from RGB 
-              videos, and the experiments show that our method outperforms state-of-the-art approaches.
-            </p>
-           
-          </div>
           <div class="item agora_1">
             <img src="./static/images/agora_1.png" class="interpolation-image"
               alt="Interpolation end reference image." />
@@ -285,20 +263,44 @@ animatable human avatars.
         <h2 class="subtitle has-text-centered">
           AGORA dataset. From left to right: 1. Input, 2. ExPose, 3. Hand4Whoe, 4. OSX (Ours)
         </h2>
-
-        <p align="middle">
+ <div class="content has-text-justified">
+            <p>
+              To adequately utilize the available image evidence in multi-view video-based avatar modeling, we propose TexVocab,
+              a novel avatar representation that constructs a texture vocabulary and associates body poses with texture maps for animation. 
+            </p>
+            <p>
+              Given multi-view RGB videos, our method initially back-projects all the available images in
+              the training videos to the posed SMPL surface, producing texture maps in the SMPL UV domain. 
+              Then we construct pairs of human poses and texture maps to establish a texture vocabulary for
+              encoding dynamic human appearances under various poses. Unlike the commonly used joint-wise manner, 
+              we further design a body-part-wise encoding strategy to learn the structural effects of the kinematic chain.
+             </p>
+            <p>
+              Given a driving pose, we query the pose feature hierarchically by decomposing the pose vector 
+              into several body parts and interpolating the texture features for synthesizing fine-grained human dynamics.
+            </p>
+            <p>
+              Overall, our method is able to create animatable human avatars with detailed and dynamic appearances from RGB 
+              videos, and the experiments show that our method outperforms state-of-the-art approaches.
+            </p>
+           
+          </div>
+        
+       <!-- <p align="middle">
           <img src="./static/videos/ehf.gif" width="720" height="240">
         </p>
         <h2 class="subtitle has-text-centered">
           EHF dataset. From left to right: 1. Input, 2. ExPose, 3. Hand4Whoe, 4. OSX (Ours)
-        </h2>
+        </h2> -->
 
+        <!-- 
         <p align="middle">
           <img src="./static/videos/ubody.gif" width="720" height="240">
         </p>
         <h2 class="subtitle has-text-centered">
           UBody dataset. From left to right: 1. Input, 2. ExPose, 3. Hand4Whoe, 4. OSX (Ours)
         </h2>
+        -->
         <!-- <video id="teaser" autoplay muted loop playsinline height="100%">
           <source src="./static/videos/demo_video.gif" type="video/mp4">
         </video> -->
